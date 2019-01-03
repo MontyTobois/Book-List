@@ -46,6 +46,18 @@ class UI{
   
     list.appendChild(row);
   }
+
+static deleteBooks(el) {
+  if (el.classList.contains('delete')) {
+    el.parentElement.parentElement.remove();
+  }
+}
+
+  static clearfields() {
+    document.querySelector('#title').value = '';
+    document.querySelector('#author').value = '';
+    document.querySelector('#isbn').value = '';
+  }
 }
 
 // Store Class: Handles Storage
@@ -68,7 +80,13 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
   
   //  Add books to UI
   UI.addBookToList(book);
+
+  //  Clear fields
+  UI.clearfields()
   
 });
 
 // Event: Remove a Book
+document.querySelector('#book-list').addEventListener('click', (e) => {
+  UI.deleteBooks(e.target)
+});
