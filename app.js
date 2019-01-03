@@ -60,6 +60,11 @@ class UI{
     const container = document.querySelector('.container');
     const form  = document.querySelector('#book-form');
     container.insertBefore(div, form);
+
+    // Disappear in 3 seconds
+    setTimeout(() => {
+      document.querySelector('.alert').remove()
+    }, 3000);
   }
 
   static clearfields() {
@@ -86,7 +91,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
   // Validate
   if (title === '' || author === ''|| isbn === '') {
-    UI.showAlert('Please fill in all fields', 'info');
+    UI.showAlert('Please fill in all fields', 'danger');
     
   } else {
       // Instatiate Book 
@@ -95,13 +100,18 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
   //  Add books to UI
   UI.addBookToList(book);
 
+  // Added book message
+  UI.showAlert('Book Added', 'success')
+
   //  Clear fields
   UI.clearfields()
-  
   } 
 });
 
 // Event: Remove a Book
 document.querySelector('#book-list').addEventListener('click', (e) => {
   UI.deleteBooks(e.target)
+
+  // Remove book message
+  UI.showAlert('Book removed', 'success')
 });
