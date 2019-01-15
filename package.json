@@ -1,0 +1,26 @@
+{
+  "name": "book-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MontyTobois/Book-List.git"
+  },
+  "author": "Andre Tobois",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MontyTobois/Book-List/issues"
+  },
+  "homepage": "https://github.com/MontyTobois/Book-List#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  }
+}
